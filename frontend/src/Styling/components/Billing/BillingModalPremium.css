@@ -1,0 +1,231 @@
+/* BillingModalPremium.css - Premium Pharma Styling */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+/* src/components/Billing/BillingModal.css */
+
+.billing-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 20px;
+}
+
+.billing-modal-container {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 600px;
+  max-height: 90vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.billing-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 24px;
+  border-bottom: 1px solid #E5E7EB;
+}
+
+.billing-modal-header h2 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #111827;
+  margin: 0;
+}
+
+.billing-modal-close {
+  background: none;
+  border: none;
+  padding: 8px;
+  cursor: pointer;
+  color: #6B7280;
+  border-radius: 6px;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.billing-modal-close:hover {
+  background: #F3F4F6;
+  color: #111827;
+}
+
+.billing-modal-body {
+  padding: 24px;
+  overflow-y: auto;
+  flex: 1;
+}
+
+.billing-modal-error {
+  background: #FEE2E2;
+  border: 1px solid #FCA5A5;
+  color: #991B1B;
+  padding: 12px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  font-size: 14px;
+}
+
+.billing-modal-form-group {
+  margin-bottom: 20px;
+}
+
+.billing-modal-form-group label {
+  display: block;
+  font-size: 14px;
+  font-weight: 500;
+  color: #374151;
+  margin-bottom: 8px;
+}
+
+.billing-modal-form-group input,
+.billing-modal-form-group select {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #D1D5DB;
+  border-radius: 8px;
+  font-size: 14px;
+  transition: all 0.2s;
+}
+
+.billing-modal-form-group input:focus,
+.billing-modal-form-group select:focus {
+  outline: none;
+  border-color: #3B82F6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.billing-modal-summary {
+  background: #F9FAFB;
+  border: 1px solid #E5E7EB;
+  border-radius: 8px;
+  padding: 16px;
+  margin-top: 20px;
+}
+
+.billing-modal-summary h3 {
+  font-size: 16px;
+  font-weight: 600;
+  color: #111827;
+  margin: 0 0 12px 0;
+}
+
+.billing-modal-summary-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+  font-size: 14px;
+  color: #6B7280;
+}
+
+.billing-modal-summary-total {
+  border-top: 2px solid #D1D5DB;
+  margin-top: 8px;
+  padding-top: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #111827;
+}
+
+.billing-modal-footer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 12px;
+  padding: 16px 24px;
+  border-top: 1px solid #E5E7EB;
+  background: #F9FAFB;
+}
+
+.billing-modal-button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+  border: none;
+}
+
+.billing-modal-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.billing-modal-button-primary {
+  background: #3B82F6;
+  color: white;
+}
+
+.billing-modal-button-primary:hover:not(:disabled) {
+  background: #2563EB;
+}
+
+.billing-modal-button-secondary {
+  background: white;
+  color: #374151;
+  border: 1px solid #D1D5DB;
+}
+
+.billing-modal-button-secondary:hover:not(:disabled) {
+  background: #F9FAFB;
+  border-color: #9CA3AF;
+}
+
+/* Print Styles */
+@media print {
+  .billing-modal-overlay {
+    background: none;
+    position: static;
+  }
+
+  .billing-modal-container {
+    box-shadow: none;
+    max-width: 100%;
+    max-height: none;
+  }
+
+  .billing-modal-header,
+  .billing-modal-footer {
+    display: none !important;
+  }
+
+  .billing-modal-body {
+    padding: 0;
+  }
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .billing-modal-container {
+    max-width: 100%;
+    margin: 0;
+    border-radius: 0;
+    max-height: 100vh;
+  }
+
+  .billing-modal-footer {
+    flex-direction: column;
+  }
+
+  .billing-modal-button {
+    width: 100%;
+    justify-content: center;
+  }
+}

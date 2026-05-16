@@ -1,0 +1,1143 @@
+/* OwnerDashboardPremium.css - Premium Pharma Dashboard Styling */
+
+/* ========================================
+   GLOBAL & FONTS
+======================================== */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+  --primary: #0066FF;
+  --accent: #00D2FF;
+  --background: #F7FAFD;
+  --text-primary: #1E293B;
+  --text-secondary: #64748B;
+  --text-muted: #94A3B8;
+  --card-bg: rgba(255, 255, 255, 0.85);
+  --success: #16A34A;
+  --warning: #F59E0B;
+  --danger: #EF4444;
+  --border: #E2E8F0;
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.04);
+  --shadow-md: 0 6px 16px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 12px 24px rgba(0, 0, 0, 0.12);
+  --radius-sm: 12px;
+  --radius-md: 16px;
+  --radius-lg: 20px;
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* ========================================
+   LOADING STATE
+======================================== */
+.owner-premium-loading-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, var(--background) 0%, #E0F2FE 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.owner-premium-loading-content {
+  text-align: center;
+}
+
+.owner-premium-spinner {
+  width: 64px;
+  height: 64px;
+  border: 4px solid var(--border);
+  border-top-color: var(--primary);
+  border-radius: 50%;
+  animation: owner-premium-spin 0.8s linear infinite;
+  margin: 0 auto 20px;
+}
+
+@keyframes owner-premium-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.owner-premium-loading-text {
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+/* ========================================
+   MAIN CONTAINER
+======================================== */
+.owner-premium-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, var(--background) 0%, #E0F2FE 100%);
+  font-family: 'Inter', sans-serif;
+}
+
+/* Adjust header for mobile with hamburger menu */
+@media (max-width: 768px) {
+  .owner-premium-header-content {
+    padding-left: 80px; /* Space for hamburger button */
+  }
+}
+
+/* ========================================
+   HEADER
+======================================== */
+.owner-premium-header {
+  background: var(--card-bg);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border);
+  box-shadow: var(--shadow-sm);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  transition: var(--transition);
+}
+
+.owner-premium-header-content {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 24px 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+}
+
+.owner-premium-header-left {
+  flex: 1;
+}
+
+.owner-premium-header-title-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.owner-premium-title {
+  font-size: 32px;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin: 0;
+  background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.owner-premium-title-decoration {
+  width: 4px;
+  height: 32px;
+  background: linear-gradient(180deg, var(--primary) 0%, var(--accent) 100%);
+  border-radius: 4px;
+}
+
+.owner-premium-subtitle {
+  font-size: 14px;
+  color: var(--text-secondary);
+  margin: 0;
+  font-weight: 500;
+}
+
+/* Period Selector */
+.owner-premium-period-selector {
+  display: flex;
+  gap: 8px;
+  background: rgba(241, 245, 249, 0.6);
+  padding: 6px;
+  border-radius: var(--radius-md);
+  backdrop-filter: blur(10px);
+}
+
+.owner-premium-period-btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: var(--radius-sm);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  background: transparent;
+  color: var(--text-secondary);
+  font-family: 'Inter', sans-serif;
+}
+
+.owner-premium-period-btn:hover {
+  background: rgba(255, 255, 255, 0.8);
+  color: var(--text-primary);
+}
+
+.owner-premium-period-btn.active {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+  color: white;
+  box-shadow: 0 4px 12px rgba(0, 102, 255, 0.3);
+}
+
+/* ========================================
+   CRITICAL ALERTS BAR
+======================================== */
+.owner-premium-alert-bar {
+  background: linear-gradient(135deg, #FEE2E2 0%, #FECACA 100%);
+  border-bottom: 2px solid #FCA5A5;
+  animation: owner-premium-pulse 2s ease-in-out infinite;
+}
+
+@keyframes owner-premium-pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.95;
+  }
+}
+
+.owner-premium-alert-content {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 16px 32px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.owner-premium-alert-icon {
+  width: 24px;
+  height: 24px;
+  color: var(--danger);
+  animation: owner-premium-pulse-icon 1.5s ease-in-out infinite;
+}
+
+@keyframes owner-premium-pulse-icon {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+.owner-premium-alert-text {
+  color: #991B1B;
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.owner-premium-alert-btn {
+  margin-left: auto;
+  background: transparent;
+  border: 2px solid var(--danger);
+  color: var(--danger);
+  padding: 8px 20px;
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: var(--transition);
+  font-family: 'Inter', sans-serif;
+}
+
+.owner-premium-alert-btn:hover {
+  background: var(--danger);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(239, 68, 68, 0.3);
+}
+
+/* ========================================
+   MAIN CONTENT
+======================================== */
+.owner-premium-main {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 32px;
+}
+
+/* ========================================
+   METRICS GRID
+======================================== */
+.owner-premium-metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+  margin-bottom: 32px;
+}
+
+.owner-premium-metric-card {
+  background: var(--card-bg);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  box-shadow: var(--shadow-md);
+  transition: var(--transition);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  position: relative;
+  overflow: hidden;
+}
+
+.owner-premium-metric-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary) 0%, var(--accent) 100%);
+  opacity: 0;
+  transition: var(--transition);
+}
+
+.owner-premium-metric-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+.owner-premium-metric-card:hover::before {
+  opacity: 1;
+}
+
+.owner-premium-metric-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+
+.owner-premium-metric-icon-wrapper {
+  width: 56px;
+  height: 56px;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition);
+}
+
+.owner-premium-metric-card:hover .owner-premium-metric-icon-wrapper {
+  transform: scale(1.05);
+}
+
+.owner-premium-metric-green .owner-premium-metric-icon-wrapper {
+  background: linear-gradient(135deg, rgba(22, 163, 74, 0.1) 0%, rgba(22, 163, 74, 0.2) 100%);
+}
+
+.owner-premium-metric-blue .owner-premium-metric-icon-wrapper {
+  background: linear-gradient(135deg, rgba(0, 102, 255, 0.1) 0%, rgba(0, 210, 255, 0.2) 100%);
+}
+
+.owner-premium-metric-purple .owner-premium-metric-icon-wrapper {
+  background: linear-gradient(135deg, rgba(147, 51, 234, 0.1) 0%, rgba(168, 85, 247, 0.2) 100%);
+}
+
+.owner-premium-metric-yellow .owner-premium-metric-icon-wrapper {
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.1) 0%, rgba(251, 191, 36, 0.2) 100%);
+}
+
+.owner-premium-metric-icon {
+  width: 28px;
+  height: 28px;
+}
+
+.owner-premium-metric-green .owner-premium-metric-icon {
+  color: var(--success);
+}
+
+.owner-premium-metric-blue .owner-premium-metric-icon {
+  color: var(--primary);
+}
+
+.owner-premium-metric-purple .owner-premium-metric-icon {
+  color: #9333EA;
+}
+
+.owner-premium-metric-yellow .owner-premium-metric-icon {
+  color: var(--warning);
+}
+
+.owner-premium-metric-change {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 6px 12px;
+  border-radius: var(--radius-sm);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.owner-premium-metric-change.positive {
+  background: rgba(22, 163, 74, 0.1);
+  color: var(--success);
+}
+
+.owner-premium-metric-change.negative {
+  background: rgba(239, 68, 68, 0.1);
+  color: var(--danger);
+}
+
+.owner-premium-trend-icon {
+  width: 16px;
+  height: 16px;
+}
+
+.owner-premium-metric-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  margin: 0 0 8px 0;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.owner-premium-metric-value {
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+/* ========================================
+   STOCK ALERTS GRID
+======================================== */
+.owner-premium-stock-alerts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+  margin-bottom: 32px;
+}
+
+.owner-premium-stock-card {
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  box-shadow: var(--shadow-md);
+  transition: var(--transition);
+  border: 2px solid;
+}
+
+.owner-premium-stock-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+.owner-premium-stock-red {
+  background: linear-gradient(135deg, #FEE2E2 0%, #FECACA 100%);
+  border-color: #FCA5A5;
+}
+
+.owner-premium-stock-yellow {
+  background: linear-gradient(135deg, #FEF3C7 0%, #FDE68A 100%);
+  border-color: #FCD34D;
+}
+
+.owner-premium-stock-orange {
+  background: linear-gradient(135deg, #FFEDD5 0%, #FED7AA 100%);
+  border-color: #FDBA74;
+}
+
+.owner-premium-stock-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.owner-premium-stock-icon {
+  width: 40px;
+  height: 40px;
+}
+
+.owner-premium-stock-red .owner-premium-stock-icon {
+  color: var(--danger);
+}
+
+.owner-premium-stock-yellow .owner-premium-stock-icon {
+  color: var(--warning);
+}
+
+.owner-premium-stock-orange .owner-premium-stock-icon {
+  color: #EA580C;
+}
+
+.owner-premium-stock-info {
+  flex: 1;
+}
+
+.owner-premium-stock-count {
+  font-size: 36px;
+  font-weight: 800;
+  margin: 0 0 4px 0;
+}
+
+.owner-premium-stock-red .owner-premium-stock-count {
+  color: #991B1B;
+}
+
+.owner-premium-stock-yellow .owner-premium-stock-count {
+  color: #92400E;
+}
+
+.owner-premium-stock-orange .owner-premium-stock-count {
+  color: #9A3412;
+}
+
+.owner-premium-stock-title {
+  font-size: 14px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.owner-premium-stock-red .owner-premium-stock-title {
+  color: #7F1D1D;
+}
+
+.owner-premium-stock-yellow .owner-premium-stock-title {
+  color: #78350F;
+}
+
+.owner-premium-stock-orange .owner-premium-stock-title {
+  color: #7C2D12;
+}
+
+.owner-premium-stock-items {
+  padding-top: 16px;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.owner-premium-stock-item {
+  font-size: 13px;
+  margin-bottom: 8px;
+  opacity: 0.85;
+  font-weight: 500;
+}
+
+.owner-premium-stock-more {
+  font-size: 12px;
+  font-weight: 700;
+  margin-top: 12px;
+  opacity: 0.8;
+}
+
+/* ========================================
+   CONTENT GRID (WORKERS & TRENDS)
+======================================== */
+.owner-premium-content-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(480px, 1fr));
+  gap: 32px;
+  margin-bottom: 32px;
+}
+
+.owner-premium-card {
+  background: var(--card-bg);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: var(--radius-lg);
+  padding: 28px;
+  box-shadow: var(--shadow-md);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  transition: var(--transition);
+}
+
+.owner-premium-card:hover {
+  box-shadow: var(--shadow-lg);
+}
+
+.owner-premium-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+  padding-bottom: 16px;
+  border-bottom: 2px solid var(--border);
+}
+
+.owner-premium-card-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.owner-premium-view-all-btn {
+  background: transparent;
+  border: none;
+  color: var(--primary);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  font-family: 'Inter', sans-serif;
+}
+
+.owner-premium-view-all-btn:hover {
+  color: var(--accent);
+  transform: translateX(4px);
+}
+
+.owner-premium-card-icon {
+  width: 24px;
+  height: 24px;
+  color: var(--text-muted);
+}
+
+/* ========================================
+   WORKER PERFORMANCE CARDS
+======================================== */
+.owner-premium-workers-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.owner-premium-worker-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+  background: rgba(241, 245, 249, 0.5);
+  border-radius: var(--radius-md);
+  transition: var(--transition);
+  border: 1px solid transparent;
+}
+
+.owner-premium-worker-card:hover {
+  background: rgba(241, 245, 249, 0.9);
+  border-color: var(--primary);
+  transform: translateX(4px);
+}
+
+.owner-premium-worker-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.owner-premium-worker-rank {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 16px;
+  border: 3px solid;
+}
+
+.owner-premium-worker-rank.rank-1 {
+  background: linear-gradient(135deg, #FEF3C7 0%, #FDE68A 100%);
+  color: #92400E;
+  border-color: #FBBF24;
+  box-shadow: 0 4px 12px rgba(251, 191, 36, 0.3);
+}
+
+.owner-premium-worker-rank.rank-2 {
+  background: linear-gradient(135deg, #F1F5F9 0%, #E2E8F0 100%);
+  color: #475569;
+  border-color: #CBD5E1;
+  box-shadow: 0 4px 12px rgba(203, 213, 225, 0.3);
+}
+
+.owner-premium-worker-rank.rank-3 {
+  background: linear-gradient(135deg, #FFEDD5 0%, #FED7AA 100%);
+  color: #9A3412;
+  border-color: #FB923C;
+  box-shadow: 0 4px 12px rgba(251, 146, 60, 0.3);
+}
+
+.owner-premium-worker-rank:not(.rank-1):not(.rank-2):not(.rank-3) {
+  background: linear-gradient(135deg, #DBEAFE 0%, #BFDBFE 100%);
+  color: #1E40AF;
+  border-color: #60A5FA;
+}
+
+.owner-premium-worker-info {
+  flex: 1;
+}
+
+.owner-premium-worker-name {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0 0 4px 0;
+}
+
+.owner-premium-worker-id {
+  font-size: 13px;
+  color: var(--text-secondary);
+  margin: 0;
+  font-weight: 500;
+}
+
+.owner-premium-worker-right {
+  text-align: right;
+}
+
+.owner-premium-worker-sales {
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--success);
+  margin: 0 0 4px 0;
+}
+
+.owner-premium-worker-bills {
+  font-size: 12px;
+  color: var(--text-secondary);
+  margin: 0;
+  font-weight: 600;
+}
+
+/* ========================================
+   SALES TRENDS CARDS
+======================================== */
+.owner-premium-trends-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.owner-premium-trend-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  transition: var(--transition);
+  background: white;
+}
+
+.owner-premium-trend-card:hover {
+  border-color: var(--primary);
+  box-shadow: var(--shadow-sm);
+  transform: translateX(4px);
+}
+
+.owner-premium-trend-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.owner-premium-trend-up,
+.owner-premium-trend-down,
+.owner-premium-trend-neutral {
+  width: 24px;
+  height: 24px;
+}
+
+.owner-premium-trend-up {
+  color: var(--success);
+}
+
+.owner-premium-trend-down {
+  color: var(--danger);
+}
+
+.owner-premium-trend-neutral {
+  color: var(--primary);
+}
+
+.owner-premium-trend-info {
+  flex: 1;
+}
+
+.owner-premium-trend-name {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0 0 4px 0;
+}
+
+.owner-premium-trend-category {
+  font-size: 13px;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.owner-premium-trend-right {
+  text-align: right;
+}
+
+.owner-premium-trend-count {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0 0 4px 0;
+}
+
+.owner-premium-trend-growth {
+  font-size: 13px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.owner-premium-trend-growth.positive {
+  color: var(--success);
+}
+
+.owner-premium-trend-growth.negative {
+  color: var(--danger);
+}
+
+.owner-premium-trend-growth.neutral {
+  color: var(--primary);
+}
+
+/* ========================================
+   STOCK MANAGEMENT TABLE
+======================================== */
+.owner-premium-table-card {
+  grid-column: 1 / -1;
+}
+
+.owner-premium-primary-btn {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: var(--transition);
+  box-shadow: 0 4px 12px rgba(0, 102, 255, 0.3);
+  font-family: 'Inter', sans-serif;
+}
+
+.owner-premium-primary-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 102, 255, 0.4);
+}
+
+.owner-premium-table-wrapper {
+  overflow-x: auto;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+}
+
+.owner-premium-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+}
+
+.owner-premium-table thead {
+  background: linear-gradient(135deg, rgba(241, 245, 249, 0.8) 0%, rgba(226, 232, 240, 0.8) 100%);
+}
+
+.owner-premium-table thead tr th {
+  padding: 16px 24px;
+  text-align: left;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  border-bottom: 2px solid var(--border);
+}
+
+.owner-premium-table-row {
+  transition: var(--transition);
+  border-bottom: 1px solid var(--border);
+}
+
+.owner-premium-table-row:hover {
+  background: rgba(241, 245, 249, 0.5);
+}
+
+.owner-premium-table-row:last-child {
+  border-bottom: none;
+}
+
+.owner-premium-table-cell {
+  padding: 20px 24px;
+}
+
+.owner-premium-medicine-name {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0 0 4px 0;
+}
+
+.owner-premium-medicine-meta {
+  font-size: 12px;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.owner-premium-stock-value {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0 0 4px 0;
+}
+
+.owner-premium-stock-min {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+/* ========================================
+   BADGES
+======================================== */
+.owner-premium-badge {
+  display: inline-block;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+.owner-premium-badge.badge-danger {
+  background: rgba(239, 68, 68, 0.15);
+  color: #991B1B;
+}
+
+.owner-premium-badge.badge-warning {
+  background: rgba(245, 158, 11, 0.15);
+  color: #92400E;
+}
+
+.owner-premium-badge.badge-orange {
+  background: rgba(234, 88, 12, 0.15);
+  color: #9A3412;
+}
+
+.owner-premium-badge.badge-normal {
+  background: rgba(100, 116, 139, 0.15);
+  color: #475569;
+}
+
+/* ========================================
+   DEMAND PATTERNS
+======================================== */
+.owner-premium-demand {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.owner-premium-demand.demand-spike {
+  color: #EA580C;
+}
+
+.owner-premium-demand.demand-steady {
+  color: var(--primary);
+}
+
+.owner-premium-demand.demand-normal {
+  color: var(--text-secondary);
+}
+
+.owner-premium-demand-icon {
+  width: 16px;
+  height: 16px;
+}
+
+/* ========================================
+   ACTION BUTTON
+======================================== */
+.owner-premium-action-btn {
+  background: transparent;
+  border: none;
+  color: var(--primary);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  font-family: 'Inter', sans-serif;
+}
+
+.owner-premium-action-btn:hover {
+  color: var(--accent);
+  transform: translateX(4px);
+}
+
+/* ========================================
+   RESPONSIVE DESIGN
+======================================== */
+@media (max-width: 1200px) {
+  .owner-premium-content-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .owner-premium-header-content {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px 16px;
+  }
+
+  .owner-premium-period-selector {
+    width: 100%;
+    overflow-x: auto;
+  }
+
+  .owner-premium-title {
+    font-size: 24px;
+  }
+
+  .owner-premium-main {
+    padding: 20px 16px;
+  }
+
+  .owner-premium-metrics-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .owner-premium-stock-alerts-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .owner-premium-content-grid {
+    gap: 20px;
+  }
+
+  .owner-premium-card {
+    padding: 20px;
+  }
+
+  .owner-premium-worker-card {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .owner-premium-worker-right {
+    text-align: left;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .owner-premium-table-wrapper {
+    border-radius: var(--radius-sm);
+  }
+
+  .owner-premium-table thead tr th,
+  .owner-premium-table-cell {
+    padding: 12px 16px;
+    font-size: 13px;
+  }
+
+  .owner-premium-medicine-name {
+    font-size: 14px;
+  }
+
+  .owner-premium-alert-content {
+    padding: 12px 16px;
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 480px) {
+  .owner-premium-title {
+    font-size: 20px;
+  }
+
+  .owner-premium-subtitle {
+    font-size: 12px;
+  }
+
+  .owner-premium-period-btn {
+    padding: 8px 16px;
+    font-size: 12px;
+  }
+
+  .owner-premium-metric-value {
+    font-size: 24px;
+  }
+
+  .owner-premium-stock-count {
+    font-size: 28px;
+  }
+
+  .owner-premium-card-title {
+    font-size: 18px;
+  }
+
+  .owner-premium-worker-rank {
+    width: 40px;
+    height: 40px;
+    font-size: 14px;
+  }
+
+  .owner-premium-table {
+    font-size: 12px;
+  }
+
+  .owner-premium-badge {
+    font-size: 10px;
+    padding: 4px 10px;
+  }
+}
+
+/* ========================================
+   ANIMATIONS
+======================================== */
+@keyframes owner-premium-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.owner-premium-metric-card,
+.owner-premium-stock-card,
+.owner-premium-card {
+  animation: owner-premium-fade-in 0.5s ease-out;
+}
+
+.owner-premium-metric-card:nth-child(1) { animation-delay: 0.1s; }
+.owner-premium-metric-card:nth-child(2) { animation-delay: 0.2s; }
+.owner-premium-metric-card:nth-child(3) { animation-delay: 0.3s; }
+.owner-premium-metric-card:nth-child(4) { animation-delay: 0.4s; }
+
+/* ========================================
+   PRINT STYLES
+======================================== */
+@media print {
+  .owner-premium-header,
+  .owner-premium-alert-bar,
+  .owner-premium-period-selector,
+  .owner-premium-primary-btn,
+  .owner-premium-action-btn,
+  .owner-premium-view-all-btn {
+    display: none;
+  }
+
+  .owner-premium-container {
+    background: white;
+  }
+
+  .owner-premium-card,
+  .owner-premium-metric-card,
+  .owner-premium-stock-card {
+    box-shadow: none;
+    border: 1px solid var(--border);
+    page-break-inside: avoid;
+  }
+}
+
+
+

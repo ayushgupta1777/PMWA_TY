@@ -1,0 +1,509 @@
+/* SavedItemsPremium.css - Premium Pharma Styling */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* Main Container */
+.saveditems-premium-page {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  min-height: 100vh;
+  background: #F7FAFD;
+}
+
+/* Header */
+.saveditems-premium-header {
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+  border-bottom: 1px solid rgba(0, 102, 255, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.saveditems-premium-header-content {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.saveditems-premium-header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 0;
+}
+
+.saveditems-premium-header-left {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.saveditems-premium-back-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  background: rgba(0, 102, 255, 0.05);
+  border: 2px solid rgba(0, 102, 255, 0.15);
+  border-radius: 12px;
+  color: #0066FF;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 14px;
+}
+
+.saveditems-premium-back-btn:hover {
+  background: rgba(0, 102, 255, 0.1);
+  transform: translateX(-4px);
+}
+
+.saveditems-premium-title-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.saveditems-premium-heart-icon {
+  width: 28px;
+  height: 28px;
+  color: #EF4444;
+  animation: saveditems-premium-pulse 2s ease infinite;
+}
+
+@keyframes saveditems-premium-pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+
+.saveditems-premium-title {
+  font-size: 28px;
+  font-weight: 700;
+  color: #1E293B;
+  margin: 0;
+}
+
+.saveditems-premium-count {
+  margin-left: 8px;
+  font-size: 18px;
+  font-weight: 400;
+  color: #64748B;
+}
+
+.saveditems-premium-cart-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  background: linear-gradient(135deg, #0066FF 0%, #00D2FF 100%);
+  border: none;
+  border-radius: 14px;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 102, 255, 0.3);
+}
+
+.saveditems-premium-cart-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 102, 255, 0.4);
+}
+
+/* Error Alert */
+.saveditems-premium-error {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 16px 24px;
+}
+
+.saveditems-premium-error-box {
+  background: rgba(239, 68, 68, 0.1);
+  border: 2px solid rgba(239, 68, 68, 0.3);
+  border-radius: 16px;
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.saveditems-premium-error-content {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.saveditems-premium-error-icon {
+  width: 20px;
+  height: 20px;
+  color: #DC2626;
+}
+
+.saveditems-premium-error-text {
+  color: #991B1B;
+  font-weight: 500;
+}
+
+.saveditems-premium-error-close {
+  background: none;
+  border: none;
+  color: #DC2626;
+  font-size: 20px;
+  cursor: pointer;
+  padding: 4px;
+  transition: color 0.3s ease;
+}
+
+.saveditems-premium-error-close:hover {
+  color: #7F1D1D;
+}
+
+/* Content */
+.saveditems-premium-content {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 32px 24px;
+}
+
+/* Empty State */
+.saveditems-premium-empty {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(10px);
+  border-radius: 24px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+  padding: 80px 40px;
+  text-align: center;
+  border: 1px solid rgba(0, 102, 255, 0.1);
+}
+
+.saveditems-premium-empty-icon {
+  width: 100px;
+  height: 100px;
+  color: #CBD5E1;
+  margin: 0 auto 20px;
+}
+
+.saveditems-premium-empty-title {
+  font-size: 28px;
+  font-weight: 700;
+  color: #1E293B;
+  margin: 0 0 12px 0;
+}
+
+.saveditems-premium-empty-text {
+  font-size: 16px;
+  color: #64748B;
+  margin: 0 0 32px 0;
+}
+
+.saveditems-premium-browse-btn {
+  padding: 14px 32px;
+  background: linear-gradient(135deg, #0066FF 0%, #00D2FF 100%);
+  border: none;
+  border-radius: 14px;
+  color: white;
+  font-weight: 600;
+  font-size: 15px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 102, 255, 0.3);
+}
+
+.saveditems-premium-browse-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 102, 255, 0.4);
+}
+
+/* Grid */
+.saveditems-premium-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 24px;
+}
+
+/* Loading */
+.saveditems-premium-loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 60vh;
+}
+
+.saveditems-premium-spinner {
+  width: 60px;
+  height: 60px;
+  border: 4px solid rgba(0, 102, 255, 0.1);
+  border-top-color: #0066FF;
+  border-radius: 50%;
+  animation: saveditems-premium-spin 0.8s linear infinite;
+}
+
+@keyframes saveditems-premium-spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Card */
+.saveditems-premium-card {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(10px);
+  border: 2px solid #E2E8F0;
+  border-radius: 20px;
+  padding: 24px;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.saveditems-premium-card:hover {
+  box-shadow: 0 12px 32px rgba(0, 102, 255, 0.15);
+  transform: translateY(-4px);
+}
+
+.saveditems-premium-card-out-of-stock {
+  border-color: rgba(239, 68, 68, 0.3);
+  background: rgba(254, 242, 242, 0.5);
+}
+
+/* Medicine Info */
+.saveditems-premium-medicine-info {
+  margin-bottom: 20px;
+}
+
+.saveditems-premium-medicine-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.saveditems-premium-medicine-name {
+  font-size: 18px;
+  font-weight: 600;
+  color: #1E293B;
+  margin: 0;
+  flex: 1;
+}
+
+.saveditems-premium-out-of-stock-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 10px;
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  border-radius: 12px;
+  color: #DC2626;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.saveditems-premium-medicine-brand {
+  font-size: 14px;
+  color: #64748B;
+  margin: 0 0 8px 0;
+}
+
+.saveditems-premium-medicine-strength {
+  font-size: 12px;
+  color: #94A3B8;
+  margin: 0;
+}
+
+/* Price Section */
+.saveditems-premium-price-section {
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 2px solid #F1F5F9;
+}
+
+.saveditems-premium-price-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.saveditems-premium-price-left {
+  display: flex;
+  flex-direction: column;
+}
+
+.saveditems-premium-price {
+  font-size: 28px;
+  font-weight: 700;
+  color: #16A34A;
+  margin: 0 0 4px 0;
+}
+
+.saveditems-premium-price-label {
+  font-size: 12px;
+  color: #94A3B8;
+}
+
+.saveditems-premium-stock-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.saveditems-premium-stock-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #64748B;
+  margin-bottom: 4px;
+}
+
+.saveditems-premium-stock-icon {
+  width: 18px;
+  height: 18px;
+}
+
+.saveditems-premium-stock-number {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.saveditems-premium-stock-label {
+  font-size: 12px;
+  color: #94A3B8;
+}
+
+/* Saved Info */
+.saveditems-premium-saved-date {
+  font-size: 12px;
+  color: #94A3B8;
+  margin-bottom: 20px;
+  font-style: italic;
+}
+
+/* Action Buttons */
+.saveditems-premium-actions {
+  display: flex;
+  gap: 12px;
+}
+
+.saveditems-premium-move-btn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 14px 20px;
+  background: linear-gradient(135deg, #0066FF 0%, #00D2FF 100%);
+  border: none;
+  border-radius: 14px;
+  color: white;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 102, 255, 0.25);
+}
+
+.saveditems-premium-move-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 102, 255, 0.35);
+}
+
+.saveditems-premium-move-btn:disabled {
+  background: #CBD5E1;
+  cursor: not-allowed;
+  box-shadow: none;
+  opacity: 0.6;
+}
+
+.saveditems-premium-move-icon {
+  width: 18px;
+  height: 18px;
+}
+
+.saveditems-premium-remove-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px;
+  background: rgba(239, 68, 68, 0.1);
+  border: 2px solid rgba(239, 68, 68, 0.2);
+  border-radius: 14px;
+  color: #EF4444;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.saveditems-premium-remove-btn:hover {
+  background: rgba(239, 68, 68, 0.15);
+  border-color: rgba(239, 68, 68, 0.3);
+  transform: scale(1.05);
+}
+
+.saveditems-premium-remove-icon {
+  width: 18px;
+  height: 18px;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .saveditems-premium-grid {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .saveditems-premium-header-inner {
+    flex-direction: column;
+    gap: 16px;
+    align-items: flex-start;
+  }
+
+  .saveditems-premium-title {
+    font-size: 24px;
+  }
+
+  .saveditems-premium-cart-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .saveditems-premium-content {
+    padding: 24px 16px;
+  }
+
+  .saveditems-premium-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .saveditems-premium-empty {
+    padding: 60px 24px;
+  }
+
+  .saveditems-premium-empty-title {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .saveditems-premium-header-content {
+    padding: 0 16px;
+  }
+
+  .saveditems-premium-title {
+    font-size: 20px;
+  }
+
+  .saveditems-premium-count {
+    font-size: 16px;
+  }
+
+  .saveditems-premium-card {
+    padding: 20px;
+  }
+
+  .saveditems-premium-medicine-name {
+    font-size: 16px;
+  }
+
+  .saveditems-premium-price {
+    font-size: 24px;
+  }
+}

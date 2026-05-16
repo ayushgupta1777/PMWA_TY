@@ -1,0 +1,443 @@
+/* BillHistoryPremium.css - Premium Pharma Styling */
+
+/* Import Font */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* Container */
+.billhistory-premium-container {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  padding: 24px;
+  background: #F7FAFD;
+  min-height: 100vh;
+}
+
+/* Filters Card */
+.billhistory-premium-filters-card {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 28px;
+  margin-bottom: 24px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(0, 102, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.billhistory-premium-filters-card:hover {
+  box-shadow: 0 10px 24px rgba(0, 102, 255, 0.12);
+}
+
+.billhistory-premium-filters-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.billhistory-premium-icon {
+  width: 24px;
+  height: 24px;
+  color: #0066FF;
+}
+
+.billhistory-premium-filters-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: #1E293B;
+  margin: 0;
+}
+
+.billhistory-premium-filters-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+}
+
+/* Input Groups */
+.billhistory-premium-input-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.billhistory-premium-label {
+  font-size: 14px;
+  font-weight: 500;
+  color: #475569;
+  margin-bottom: 8px;
+}
+
+.billhistory-premium-input,
+.billhistory-premium-select {
+  width: 100%;
+  padding: 12px 16px;
+  border: 2px solid #E2E8F0;
+  border-radius: 12px;
+  font-size: 14px;
+  color: #1E293B;
+  background: white;
+  transition: all 0.3s ease;
+  outline: none;
+}
+
+.billhistory-premium-input:focus,
+.billhistory-premium-select:focus {
+  border-color: #0066FF;
+  box-shadow: 0 0 0 4px rgba(0, 102, 255, 0.1);
+}
+
+.billhistory-premium-search-wrapper {
+  position: relative;
+}
+
+.billhistory-premium-search-icon {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 18px;
+  height: 18px;
+  color: #94A3B8;
+  pointer-events: none;
+}
+
+.billhistory-premium-search-input {
+  padding-left: 44px;
+}
+
+/* Content Card */
+.billhistory-premium-content-card {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(0, 102, 255, 0.1);
+}
+
+/* Loading State */
+.billhistory-premium-loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 80px 20px;
+}
+
+.billhistory-premium-spinner {
+  width: 48px;
+  height: 48px;
+  border: 4px solid rgba(0, 102, 255, 0.1);
+  border-top-color: #0066FF;
+  border-radius: 50%;
+  animation: billhistory-premium-spin 0.8s linear infinite;
+}
+
+@keyframes billhistory-premium-spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Error State */
+.billhistory-premium-error {
+  padding: 80px 20px;
+  text-align: center;
+  color: #EF4444;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+/* Empty State */
+.billhistory-premium-empty {
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.billhistory-premium-empty-icon {
+  width: 80px;
+  height: 80px;
+  color: #CBD5E1;
+  margin: 0 auto 16px;
+}
+
+.billhistory-premium-empty-text {
+  font-size: 16px;
+  color: #94A3B8;
+  font-weight: 500;
+  margin: 0;
+}
+
+/* Table */
+.billhistory-premium-table-wrapper {
+  overflow-x: auto;
+}
+
+.billhistory-premium-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+.billhistory-premium-thead {
+  background: linear-gradient(135deg, #0066FF 0%, #00D2FF 100%);
+}
+
+.billhistory-premium-th {
+  padding: 18px 24px;
+  text-align: left;
+  font-size: 12px;
+  font-weight: 600;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.billhistory-premium-th-actions {
+  text-align: right;
+}
+
+.billhistory-premium-tbody {
+  background: white;
+}
+
+.billhistory-premium-row {
+  transition: all 0.3s ease;
+  border-bottom: 1px solid #F1F5F9;
+}
+
+.billhistory-premium-row:hover {
+  background: rgba(0, 102, 255, 0.02);
+  transform: scale(1.005);
+}
+
+.billhistory-premium-td {
+  padding: 20px 24px;
+  font-size: 14px;
+}
+
+.billhistory-premium-td-actions {
+  text-align: right;
+}
+
+.billhistory-premium-bill-number {
+  font-weight: 600;
+  color: #1E293B;
+  margin: 0 0 4px 0;
+  font-size: 15px;
+}
+
+.billhistory-premium-bill-date {
+  color: #64748B;
+  margin: 0;
+  font-size: 13px;
+}
+
+.billhistory-premium-customer-name {
+  font-weight: 500;
+  color: #1E293B;
+  margin: 0 0 4px 0;
+}
+
+.billhistory-premium-customer-phone {
+  color: #64748B;
+  margin: 0;
+  font-size: 13px;
+}
+
+.billhistory-premium-items-count {
+  color: #475569;
+  margin: 0;
+  font-weight: 500;
+}
+
+.billhistory-premium-amount {
+  font-weight: 700;
+  color: #16A34A;
+  margin: 0;
+  font-size: 16px;
+}
+
+/* Status Badges */
+.billhistory-premium-badge {
+  display: inline-block;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.billhistory-premium-badge-completed {
+  background: rgba(22, 163, 74, 0.1);
+  color: #16A34A;
+  border: 1px solid rgba(22, 163, 74, 0.2);
+}
+
+.billhistory-premium-badge-draft {
+  background: rgba(245, 158, 11, 0.1);
+  color: #F59E0B;
+  border: 1px solid rgba(245, 158, 11, 0.2);
+}
+
+.billhistory-premium-badge-cancelled {
+  background: rgba(239, 68, 68, 0.1);
+  color: #EF4444;
+  border: 1px solid rgba(239, 68, 68, 0.2);
+}
+
+.billhistory-premium-badge-refunded {
+  background: rgba(100, 116, 139, 0.1);
+  color: #64748B;
+  border: 1px solid rgba(100, 116, 139, 0.2);
+}
+
+.billhistory-premium-badge-default {
+  background: rgba(148, 163, 184, 0.1);
+  color: #64748B;
+  border: 1px solid rgba(148, 163, 184, 0.2);
+}
+
+/* Action Button */
+.billhistory-premium-action-btn {
+  background: linear-gradient(135deg, #0066FF 0%, #00D2FF 100%);
+  border: none;
+  border-radius: 10px;
+  padding: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.billhistory-premium-action-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 102, 255, 0.3);
+}
+
+.billhistory-premium-action-icon {
+  width: 18px;
+  height: 18px;
+  color: white;
+}
+
+/* Pagination */
+.billhistory-premium-pagination {
+  padding: 20px 24px;
+  border-top: 1px solid #F1F5F9;
+  background: white;
+}
+
+.billhistory-premium-pagination-mobile {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.billhistory-premium-pagination-desktop {
+  display: none;
+}
+
+.billhistory-premium-pagination-btn {
+  padding: 10px 20px;
+  border: 2px solid #E2E8F0;
+  border-radius: 12px;
+  background: white;
+  color: #475569;
+  font-weight: 500;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.billhistory-premium-pagination-btn:hover:not(:disabled) {
+  border-color: #0066FF;
+  color: #0066FF;
+  background: rgba(0, 102, 255, 0.05);
+}
+
+.billhistory-premium-pagination-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.billhistory-premium-pagination-info {
+  color: #475569;
+  font-size: 14px;
+  margin: 0;
+}
+
+.billhistory-premium-pagination-number {
+  font-weight: 600;
+  color: #1E293B;
+}
+
+.billhistory-premium-pagination-nav {
+  display: flex;
+  gap: 0;
+}
+
+.billhistory-premium-pagination-btn-left {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-right: none;
+}
+
+.billhistory-premium-pagination-btn-right {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+/* Responsive Design */
+@media (min-width: 640px) {
+  .billhistory-premium-pagination-mobile {
+    display: none;
+  }
+
+  .billhistory-premium-pagination-desktop {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .billhistory-premium-container {
+    padding: 16px;
+  }
+
+  .billhistory-premium-filters-card {
+    padding: 20px;
+  }
+
+  .billhistory-premium-filters-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .billhistory-premium-table-wrapper {
+    border-radius: 16px;
+  }
+
+  .billhistory-premium-th,
+  .billhistory-premium-td {
+    padding: 12px 16px;
+    font-size: 12px;
+  }
+
+  .billhistory-premium-amount {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .billhistory-premium-filters-title {
+    font-size: 18px;
+  }
+
+  .billhistory-premium-th {
+    font-size: 10px;
+    padding: 12px 10px;
+  }
+
+  .billhistory-premium-td {
+    padding: 14px 10px;
+  }
+}
+

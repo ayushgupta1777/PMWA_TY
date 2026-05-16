@@ -1,0 +1,302 @@
+/* ========================================
+   SearchBar Premium Component CSS
+   ======================================== */
+
+/* Root container */
+.searchbar-premium-wrapper {
+  width: 100%;
+  max-width: 100%;
+}
+
+/* Main search container */
+.searchbar-premium-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.85);
+  border: 1.5px solid #E0E7FF;
+  border-radius: 16px;
+  padding: 0;
+  overflow: hidden;
+  box-shadow: 0 6px 16px rgba(0, 102, 255, 0.08);
+  backdrop-filter: blur(10px);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.searchbar-premium-container:focus-within {
+  border-color: #0066FF;
+  box-shadow: 0 12px 28px rgba(0, 102, 255, 0.18),
+              inset 0 0 0 1px rgba(0, 102, 255, 0.1);
+  transform: translateY(-2px);
+}
+
+.searchbar-premium-container:hover {
+  border-color: #C7D2FE;
+  box-shadow: 0 8px 20px rgba(0, 102, 255, 0.12);
+}
+
+/* Left search icon */
+.searchbar-premium-icon-left {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  color: #6B7280;
+  pointer-events: none;
+  flex-shrink: 0;
+  stroke-width: 2;
+}
+
+/* Input field */
+.searchbar-premium-input {
+  flex: 1;
+  width: 100%;
+  padding: 12px 14px 12px 48px;
+  font-family: 'Inter', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  color: #1E293B;
+  background: transparent;
+  border: none;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.searchbar-premium-input::placeholder {
+  color: #9CA3AF;
+  font-weight: 400;
+}
+
+.searchbar-premium-input:focus {
+  color: #0F172A;
+}
+
+/* Right icons container */
+.searchbar-premium-icons-right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding-right: 12px;
+  flex-shrink: 0;
+}
+
+/* Loading spinner */
+.searchbar-premium-icon-loader {
+  width: 20px;
+  height: 20px;
+  color: #0066FF;
+  animation: searchbar-spin 1s linear infinite;
+  flex-shrink: 0;
+}
+
+@keyframes searchbar-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Clear button */
+.searchbar-premium-btn-clear {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  background: transparent;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  flex-shrink: 0;
+}
+
+.searchbar-premium-btn-clear:hover {
+  background: rgba(239, 68, 68, 0.08);
+}
+
+.searchbar-premium-btn-clear:active {
+  background: rgba(239, 68, 68, 0.12);
+  transform: scale(0.95);
+}
+
+/* Clear icon */
+.searchbar-premium-icon-clear {
+  width: 18px;
+  height: 18px;
+  color: #9CA3AF;
+  transition: color 0.3s ease;
+}
+
+.searchbar-premium-btn-clear:hover .searchbar-premium-icon-clear {
+  color: #EF4444;
+}
+
+/* Voice search button */
+.searchbar-premium-btn-voice {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  background: rgba(0, 102, 255, 0.08);
+  border: 1px solid rgba(0, 102, 255, 0.2);
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  flex-shrink: 0;
+}
+
+.searchbar-premium-btn-voice:hover {
+  background: rgba(0, 102, 255, 0.12);
+  border-color: rgba(0, 102, 255, 0.4);
+  transform: scale(1.05);
+}
+
+.searchbar-premium-btn-voice:active {
+  background: rgba(0, 102, 255, 0.16);
+  transform: scale(0.95);
+}
+
+/* Voice icon */
+.searchbar-premium-icon-mic {
+  width: 18px;
+  height: 18px;
+  color: #0066FF;
+  transition: all 0.3s ease;
+}
+
+.searchbar-premium-btn-voice:hover .searchbar-premium-icon-mic {
+  color: #0052CC;
+}
+
+/* Search hint message */
+.searchbar-premium-hint {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  right: 0;
+  background: linear-gradient(135deg, rgba(0, 102, 255, 0.08) 0%, rgba(0, 210, 255, 0.05) 100%);
+  border: 1px solid rgba(0, 102, 255, 0.2);
+  border-radius: 12px;
+  padding: 12px 16px;
+  font-size: 13px;
+  color: #0052CC;
+  font-weight: 500;
+  box-shadow: 0 4px 12px rgba(0, 102, 255, 0.1);
+  animation: searchbar-slideDown 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  backdrop-filter: blur(8px);
+}
+
+.searchbar-premium-hint p {
+  margin: 0;
+}
+
+@keyframes searchbar-slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ========================================
+   Responsive Design
+   ======================================== */
+
+/* Tablet (768px and below) */
+@media (max-width: 768px) {
+  .searchbar-premium-container {
+    border-radius: 14px;
+  }
+
+  .searchbar-premium-input {
+    padding: 11px 12px 11px 44px;
+    font-size: 15px;
+  }
+
+  .searchbar-premium-icon-left {
+    left: 12px;
+    width: 18px;
+    height: 18px;
+  }
+
+  .searchbar-premium-icons-right {
+    gap: 6px;
+    padding-right: 10px;
+  }
+
+  .searchbar-premium-btn-clear,
+  .searchbar-premium-btn-voice {
+    width: 32px;
+    height: 32px;
+  }
+
+  .searchbar-premium-icon-mic,
+  .searchbar-premium-icon-clear {
+    width: 16px;
+    height: 16px;
+  }
+
+  .searchbar-premium-icon-loader {
+    width: 18px;
+    height: 18px;
+  }
+
+  .searchbar-premium-hint {
+    font-size: 12px;
+    padding: 10px 14px;
+    border-radius: 10px;
+  }
+}
+
+/* Mobile (480px and below) */
+@media (max-width: 480px) {
+  .searchbar-premium-container {
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 102, 255, 0.08);
+  }
+
+  .searchbar-premium-input {
+    padding: 10px 12px 10px 40px;
+    font-size: 14px;
+  }
+
+  .searchbar-premium-icon-left {
+    left: 10px;
+    width: 16px;
+    height: 16px;
+  }
+
+  .searchbar-premium-icons-right {
+    gap: 4px;
+    padding-right: 8px;
+  }
+
+  .searchbar-premium-btn-clear,
+  .searchbar-premium-btn-voice {
+    width: 30px;
+    height: 30px;
+  }
+
+  .searchbar-premium-icon-mic,
+  .searchbar-premium-icon-clear {
+    width: 15px;
+    height: 15px;
+  }
+
+  .searchbar-premium-hint {
+    font-size: 11px;
+    padding: 8px 12px;
+    border-radius: 10px;
+  }
+}
